@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search others!</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br>
+    <br>
+        <br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

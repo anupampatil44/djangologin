@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged in</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+    <p>Welcome,{{request.user.first_name}}!!!!</p>
+{% else %}
+    <p>Welcome, new user. Please log in.</p>
+{% endif %}
+<br><br>
+<button onclick="window.location.href='{% url 'logout' %}'">Logout
+</button>
+</body>
+</html>

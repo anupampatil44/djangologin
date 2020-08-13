@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User found!</title>
+</head>
+<body>
+{% if profile %}
+<b>User Found!</b><br>
+
+<li>First Name: </li>{{ profile.first }}
+<br>
+<li>Last Name: </li>{{ profile.last }}
+<br>
+<li>email: </li>{{ profile.email }}
+<br>
+<li>Gender: </li>{{ profile.gender }}
+<br><br>
+{% endif %}
+<a href="{% url 'search' %}">Search again?</a><br>
+<a href="{% url 'register' %}">Add user info?</a>
+
+</body>
+</html>

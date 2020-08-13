@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+  {% for message in messages %}
+
+                    <div class="alert alert-success">
+                        <a class="close" href="#" data-dismiss="alert">×</a>
+
+                        {{ message }}
+
+                    </div>
+            {% endfor %}
+
+<form  method="post">
+        {% csrf_token %}
+    <b>Signup Today!</b><br><br>
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username" value=><br>
+    <label for="f_name">First Name:</label><br>
+  <input type="text" id="f_name" name="f_name" value=><br>
+    <label for="l_name">Last Name:</label><br>
+  <input type="text" id="l_name" name="l_name" value=><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email" value=><br><br>
+    <label for="phone">Phone:</label><br>
+  <input type="text" id="phone" name="phone" value=><br><br>
+<label for="password">Password:</label><br>
+  <input type="password" id="password" name="password" value=><br>
+    <br>
+        <input type="submit" value="Submit">
+    <br><br>
+    {{ form }}
+</form>
+<a href="{% url 'login' %}">Already a user? Login</a>
+</body>
+</html>
