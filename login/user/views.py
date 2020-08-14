@@ -22,15 +22,20 @@ def register(request):
         email=request.POST['email']
         username = request.POST['username']
         password=request.POST['password']
+        cpassword=request.POST['cpassword']
         f_name = request.POST['f_name']
         l_name=request.POST['l_name']
         phone=request.POST['phone']
+
         try:
             obj=Register()
             form =User.objects.create_user(username=username,first_name=f_name,last_name=l_name,email=email,password=password,)
             obj.user=form
             obj.phone=phone
-            obj.save()
+            if password==cpassword:
+                obj.save()
+            else:
+                messages.error(request, 'passwords don\'t match.' )
         except:
             messages.error(request, 'username already taken, try something else.')
 
